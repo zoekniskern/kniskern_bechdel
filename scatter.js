@@ -81,8 +81,43 @@ function buildScatter(Sdataset) {
             return '#946471'
         }
     })
-    .attr('r', 5)
+    .attr('r', 4)
     .attr('transform', `translate(35, -5)`);
+
+    // let line = d3.select('#bvg').append('line')
+    // .attr("x1", 50)
+    // .attr("y1", 5)
+    // .attr("x2", 170000000)
+    // .attr("y2", 5)
+    // .attr('stroke', 'gray')
+    // .attr('stroke-width', 1);
+
+    // scatterChart.append(line);
+
+    // scatterChart
+    // .on('mouseover', function(d, i) {
+    //   d3.select(this)
+    //     .transition()
+    //     .style('fill', '#77ab59');
+    //   toolTip.transition()		
+    //     .duration(200)		
+    //     .style("opacity", .9);
+    //   toolTip.html(
+    //     'Year: ' + d.key + '<br/>' +
+    //     d3.format(".0%")(d.value.passed / d.value.all) + ' pass Blechdel'
+    //   )	
+    //     .style("left", (d3.event.pageX) + 10 + "px")		
+    //     .style("top", (d3.event.pageY - 28) + "px");	
+    // })
+    // .on('mouseout', function(d, i) {
+    //   d3.select(this)
+    //     .transition()
+    //     .style('fill', 'rosybrown');
+    //   console.log("moused out in original");
+    //   toolTip.transition()		
+    //     .duration(500)		
+    //     .style("opacity", 0);
+    // });
 
     //AXES
     SxAxis = d3.axisBottom(SxScale)
