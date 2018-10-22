@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <title>Blechdel Progress</title>
+    <meta charset="utf-8">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+  <body>
+    <div id='header'>
+      <h1>Women v Film</h1>
+      <div id='menu'>
+          <a href="#push">About</a><br/>
+          <a href="#MoviesPerYear">Yearly Data</a><br/>
+          <a href="#resources">Learn More</a>
+      </div>
+    </div>
+    <div id='push'></div>
+    <div id="why" class="padding">
+      <div id="matter">
+        <h3>Why Should We Be Conscious?</h3>
+        <p>Pork drumstick kevin venison ribeye shoulder ham hock. Burgdoggen buffalo salami bresaola corned beef turkey kielbasa tenderloin shankle tongue drumstick strip steak. Filet mignon pancetta chicken ham, tenderloin kielbasa pastrami meatloaf jowl chuck porchetta t-bone picanha. Buffalo porchetta venison sausage.</p>
+      </div>
+      <div class="panel">
+        <h4>What is the Blechdel Test?</h4>
+        <p>Bacon ipsum dolor amet brisket pastrami doner ham hock. Pancetta pork belly tenderloin meatloaf swine, andouille t-bone hamburger pork chop fatback buffalo jowl rump. Meatball t-bone flank alcatra, bacon pork buffalo picanha. Cupim ball tip chuck shankle brisket prosciutto. padding: 5px 15px 5px 15px Bacon ipsum dolor amet brisket pastrami doner ham hock. Pancetta pork belly tenderloin meatloaf swine, andouille t-bone hamburger pork chop fatback buffalo jowl rump. Meatball t-bone flank alcatra, bacon pork buffalo picanha. Cupim ball tip chuck shankle brisket prosciutto. padding: 5px 15px 5px 15px;</p>
+      </div>
+      <div class="panel">
+        <h4>Pros and Cons</h4>
+        <p>Fatback pancetta andouille meatball beef ribs tail porchetta ham shank corned beef drumstick pig. Tenderloin cow rump, chicken short loin biltong alcatra swine capicola bresaola tail short ribs kevin doner. Rump brisket meatloaf, cupim hamburger pork chop pork loin swine beef ribs shankle ball tip ham turducken pork.</p>
+      </div>
+      <div class="panel">
+        <h4>Alternatives</h4>
+        <p>Tail chicken pork chop frankfurter doner beef ribs, filet mignon short loin flank ground round biltong hamburger meatball swine jerky. Frankfurter ball tip pastrami meatball brisket strip steak pork loin fatback short ribs cupim. Corned beef shoulder pancetta pastrami rump biltong prosciutto..</p>
+      </div>
+    </div>
+    <div id="MoviesPerYear" class="graph">
+      <!-- MOVIES PER YEAR GRAPH -->
+      <h3>Looking at Movies by Year</h3>
+      <svg id='chart'></svg>
+      <div id='yearSelector'>
+        <label>Chart Type:</label><br/>
+        <select id='yearData'>
+          <option>Movies</option>
+          <option>Blechdel Test</option>
+          <option>Budget</option>
+        </select>
+    </div>
+    </div>
+    <div id="BudgetPerYear" class="graph">
+      <!-- MOVIES PER YEAR GRAPH -->
+    </div>
+    <div id="BlechdelPerYear" class="graph">
+      <!-- MOVIES PER YEAR GRAPH -->
+      <svg id='chart'></svg>
+    </div>
+    <div id='resources'>
+
+    </div>
+    
+    <script src='./main.js'></script>
+  </body>
+</html>

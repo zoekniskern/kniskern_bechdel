@@ -1,0 +1,139 @@
+/* MAIN CSS FILE FOR  BLECHDEL PROJECT */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Lora');
+
+svg {
+  display:block;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+/* LINKS */
+/* unvisited link */
+a:link {
+  color: black;
+  text-decoration: none;
+}
+/* visited link */
+a:visited {
+  color: black;
+}
+/* mouse over link */
+a:hover {
+  color: rosybrown;
+}
+/* selected link */
+a:active {
+  color: rgb(87, 37, 62);
+}
+
+
+/* TOP HEADER */
+#header{
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  padding: 0px 30px 0px 30px;
+  position: fixed;
+  overflow-x: scroll;
+  border-bottom: solid rosybrown 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menu {
+}
+
+#push{
+  height: 175px;
+}
+
+h1 {
+  font-family: 'Lora', serif;
+  font-size: 4em;
+  text-align: left;
+  padding-top: 20px;
+  margin: 0px;
+}
+
+.padding {
+  padding: 20px 20px 5px 20px;
+}
+
+/* ABOUT SECTION */
+#why {
+  display: flex;
+  flex-flow: row wrap;
+  height: fit-content;
+  /* border: red 1px solid; */
+  flex: 1 100%;
+}
+
+#matter {
+  margin: 10px;
+  padding: 5px 15px 5px 15px;
+  width: 100%;
+  height: fit-content;
+  background-color: rosybrown;
+  color: white;
+}
+
+.panel {
+  margin: 10px;
+  margin-top: 30px;
+  padding: 0px 15px 5px 15px;
+  width: 20%;
+  height: 275px;
+  overflow: scroll;
+  /* background-color: blanchedalmond; */
+  border-top: solid rosybrown 10px;
+  flex: 1 auto;
+}
+
+@media only screen and (max-width : 768px) {
+    .panel {
+      width: 100%;
+      height: 175px;
+    }
+    #menu {
+
+    }
+}
+
+/* GRAPHS */
+#MoviesPerYear {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.graph {
+  padding: 30px;
+  margin: 0px;
+}
+
+h3 {
+  width: 100%;
+}
+
+#yearSelector {
+  margin-left: 30px;
+}
+
