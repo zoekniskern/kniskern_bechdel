@@ -22,6 +22,7 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
+  background-color: #fefdfb
 }
 
 /* LINKS */
@@ -58,9 +59,6 @@ a:active {
   align-items: center;
 }
 
-#menu {
-}
-
 #push{
   height: 175px;
 }
@@ -74,7 +72,7 @@ h1 {
 }
 
 .padding {
-  padding: 20px 20px 5px 20px;
+  padding: 20px 20px 5px 60px;
 }
 
 /* ABOUT SECTION */
@@ -82,7 +80,7 @@ h1 {
   display: flex;
   flex-flow: row wrap;
   height: fit-content;
-  /* border: red 1px solid; */
+  padding: 0px 30px 5px 30px;
   flex: 1 100%;
 }
 
@@ -102,9 +100,13 @@ h1 {
   width: 20%;
   height: 275px;
   overflow: scroll;
-  /* background-color: blanchedalmond; */
+  background-color: white;
   border-top: solid rosybrown 10px;
   flex: 1 auto;
+}
+
+#resources {
+  padding-bottom: 50px;
 }
 
 @media only screen and (max-width : 768px) {
@@ -112,16 +114,21 @@ h1 {
       width: 100%;
       height: 175px;
     }
-    #menu {
-
+    #MoviesPerYear {
+      flex-wrap: wrap;
+    }
+    #yearDescrip {
+      width: 100%;
     }
 }
 
 /* GRAPHS */
 #MoviesPerYear {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  
 }
 
 .graph {
@@ -129,11 +136,28 @@ h1 {
   margin: 0px;
 }
 
-h3 {
+h2 {
   width: 100%;
 }
 
 #yearSelector {
-  margin-left: 30px;
+  margin-left: 10px;
+  background-color: white;
+  padding: 10px;
+}
+
+#yearDescrip{
+  width: 15vw;
+}
+
+div.tooltip {	
+  position: absolute;			
+  text-align: center;			
+  width: fit-content;					
+  height: fit-content;	
+  padding: 5px;				
+  color: white;	
+  background:#7F525D;			
+  pointer-events: none;			
 }
 

@@ -12,33 +12,39 @@
       <h1>Women v Film</h1>
       <div id='menu'>
           <a href="#push">About</a><br/>
-          <a href="#MoviesPerYear">Yearly Data</a><br/>
+          <a href="#MoviesPerYear">Data</a><br/>
           <a href="#resources">Learn More</a>
       </div>
     </div>
     <div id='push'></div>
-    <div id="why" class="padding">
+    <div id="why">
       <div id="matter">
         <h3>Why Should We Be Conscious?</h3>
-        <p>Pork drumstick kevin venison ribeye shoulder ham hock. Burgdoggen buffalo salami bresaola corned beef turkey kielbasa tenderloin shankle tongue drumstick strip steak. Filet mignon pancetta chicken ham, tenderloin kielbasa pastrami meatloaf jowl chuck porchetta t-bone picanha. Buffalo porchetta venison sausage.</p>
+        <p>The entertainment industry is saturated with content to the extent that we may not always be conscious of how much we consume. The cinematic industry within that is huge, and with big budget films and franchises, continues to grow. With the rise of streaming they are now within reach of an even larger audience: an audience that desires representation within those stories. Women and racial minorities are historically underrepresented in movies, and when they are included, are often relegated to supporting characters, love interests and stereotypical roles. As we raise awareness on female topics in our contemporary society, we must also examine the images of females that we digest. Movies are a huge part of that. If the only characters that society is watching women play are those who play second fiddle to their male co-stars, a subtle bias is being built. Having female voices that young women can grow up watching, and relating to, is important.</p>
+        <p>This issue has been brought to center stage in the past few years. A call for more representation and equality for women in front of and behind the scenes of the filmmaking process has seen slow, but tangible, results. </p>
       </div>
       <div class="panel">
         <h4>What is the Blechdel Test?</h4>
-        <p>Bacon ipsum dolor amet brisket pastrami doner ham hock. Pancetta pork belly tenderloin meatloaf swine, andouille t-bone hamburger pork chop fatback buffalo jowl rump. Meatball t-bone flank alcatra, bacon pork buffalo picanha. Cupim ball tip chuck shankle brisket prosciutto. padding: 5px 15px 5px 15px Bacon ipsum dolor amet brisket pastrami doner ham hock. Pancetta pork belly tenderloin meatloaf swine, andouille t-bone hamburger pork chop fatback buffalo jowl rump. Meatball t-bone flank alcatra, bacon pork buffalo picanha. Cupim ball tip chuck shankle brisket prosciutto. padding: 5px 15px 5px 15px;</p>
+        <p>The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria:</p>
+          <p>(1) it has to have at least two named female characters in it, who </p>
+          <p>(2) who talk to each other, about</p>
+          <p>(3) something besides a man. </p>
+        <p>The test was popularized by Alison Bechdel's comic Dykes to Watch Out For, in a 1985 strip called The Rule.</p>
+        <p>Definition from: <a href='https://bechdeltest.com/'>The Blechdel Test Website</a></p>
       </div>
       <div class="panel">
         <h4>Pros and Cons</h4>
-        <p>Fatback pancetta andouille meatball beef ribs tail porchetta ham shank corned beef drumstick pig. Tenderloin cow rump, chicken short loin biltong alcatra swine capicola bresaola tail short ribs kevin doner. Rump brisket meatloaf, cupim hamburger pork chop pork loin swine beef ribs shankle ball tip ham turducken pork.</p>
+        <p>The Blechdel Test is not perfect, although it is noteable that manny contemporary films still do not pass it. The Blechdel test should, in the future, serve as the bare minimum requirement for a movie script that recognizes the value of it's female characters. It does not take into account diversity, content, or female representation in the crew of a movie, which are additional facets that we must hold producers accountable for.</p>
       </div>
       <div class="panel">
         <h4>Alternatives</h4>
-        <p>Tail chicken pork chop frankfurter doner beef ribs, filet mignon short loin flank ground round biltong hamburger meatball swine jerky. Frankfurter ball tip pastrami meatball brisket strip steak pork loin fatback short ribs cupim. Corned beef shoulder pancetta pastrami rump biltong prosciutto..</p>
+        <p>The Blechdel Test has been around for a while and as a result, is one of the most known measures for female film representation. However, the gap that it leaves has not been overlooked by critics and movie enthusiasts! Tests such as the 'Mako Mori', 'Ellen Willis', 'Racial Blechdel', 'Duvernay' and others have been proposed to highlighy gender roles, strong female characters and diverse casting. Refer for the <a href="#resources">Learn More</a> section for some suggestions on reading about these other tests!</p>
       </div>
     </div>
-    <div id="MoviesPerYear" class="graph">
-      <!-- MOVIES PER YEAR GRAPH -->
-      <h3>Looking at Movies by Year</h3>
-      <svg id='chart'></svg>
+    <h2 id="yearTitle" class='padding'>Looking at Movies by Year</h2>
+    <div id="MoviesPerYear">
+      <!-- MOVIES PER YEAR GRAPH --> 
+      <svg id='chart' class="graph"></svg>
       <div id='yearSelector'>
         <label>Chart Type:</label><br/>
         <select id='yearData'>
@@ -46,19 +52,21 @@
           <option>Blechdel Test</option>
           <option>Budget</option>
         </select>
+        <p id='yearDescrip'>This set of data contains 1795 movies but they are not equally distributed by year. As we examine trends by year it is important to recognize flaws in our dataset that weigh it heavily towards movies in the 2000s.</p>
     </div>
     </div>
-    <div id="BudgetPerYear" class="graph">
-      <!-- MOVIES PER YEAR GRAPH -->
+    <h2 id="bvgTitle" class='padding'>Budget compared to Domestic Gross in Millions</h2>
+    <div id="BudgetvGross" class="graph">
+      <!-- BUDG VS GROSS -->
+      <svg id='bvg'></svg>
     </div>
-    <div id="BlechdelPerYear" class="graph">
-      <!-- MOVIES PER YEAR GRAPH -->
-      <svg id='chart'></svg>
-    </div>
-    <div id='resources'>
-
+    <div id='resources' class='padding'>
+      <h3>Further Reading!</h3>
+        <a href='https://lifehacker.com/the-bechdel-test-and-other-media-representation-tests-1819324045'>Media Representation Tests</a><br/>
+        <a href='https://projects.fivethirtyeight.com/next-bechdel/'>Creating the Next Blechdel Test</a><br/>
     </div>
     
     <script src='./main.js'></script>
+    <script src='./scatter.js'></script>
   </body>
 </html>
