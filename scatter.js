@@ -76,9 +76,9 @@ function buildScatter(Sdataset) {
     .attr('cy', (d) => SyScale(d.gross))
     .attr('fill', function(d) {
         if(d.binary == 'PASS'){
-            return '#77ab59'
+            return '#764f5a'
         } else {
-            return '#946471'
+            return '#92a5ee'
         }
     })
     .attr('r', 4)
