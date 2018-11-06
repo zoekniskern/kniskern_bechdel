@@ -1,5 +1,5 @@
 /*
-Blechdel Scatter Plot
+Bechdel Scatter Plot
 
 Standard Comparison of Budget and Gross
 
@@ -125,7 +125,7 @@ function buildScatter(Sdataset) {
     //     .style("opacity", .9);
     //   toolTip.html(
     //     'Year: ' + d.key + '<br/>' +
-    //     d3.format(".0%")(d.value.passed / d.value.all) + ' pass Blechdel'
+    //     d3.format(".0%")(d.value.passed / d.value.all) + ' pass Bechdel'
     //   )	
     //     .style("left", (d3.event.pageX) + 10 + "px")		
     //     .style("top", (d3.event.pageY - 28) + "px");	
