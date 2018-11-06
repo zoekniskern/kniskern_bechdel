@@ -8,6 +8,7 @@
   </head>
 
   <body>
+    <a href='MY-URL#top'></a>
     <div id='header'>
       <h1>Women v Film</h1>
       <div id='menu'>
@@ -18,6 +19,8 @@
     </div>
     <div id='push'></div>
     <div id="why">
+      <!-- https://talkmovietome.wordpress.com/2013/08/07/if-jane-eyre-doesnt-pass-the-bechdel-test-what-does/ -->
+      <img id="women" src="womeninfilm.jpg" alt="A Few Women in Film">
       <div id="matter">
         <h3>Why Should We Be Conscious?</h3>
         <p>The entertainment industry is saturated with content to the extent that we may not always be conscious of how much we consume. The cinematic industry within that is huge, and with big budget films and franchises, continues to grow. With the rise of streaming they are now within reach of an even larger audience: an audience that desires representation within those stories. Women and racial minorities are historically underrepresented in movies, and when they are included, are often relegated to supporting characters, love interests and stereotypical roles. As we raise awareness on female topics in our contemporary society, we must also examine the images of females that we digest. Movies are a huge part of that. If the only characters that society is watching women play are those who play second fiddle to their male co-stars, a subtle bias is being built. Having female voices that young women can grow up watching, and relating to, is important.</p>
@@ -60,19 +63,27 @@
       <!-- BUDG VS GROSS -->
       <svg id='bvg'></svg>
       <div id='bvgDescrip'>
-        <p>This scatterplot compares the budget's of a film (shown on the x axis) to the domestic profit of the movie (shown on the y axis). Movies that passed are shown in burgundy.</p>
-        <p>Indie and artistic films are often likely to pass the Blechdel test however, larger budget films have more trouble. In terms of earnings, both Blechdel-passing and non-passing fall around the same areas.</p>
+        <p>This scatterplot compares the budget's of a film (shown on the x axis) to the domestic gross of the movie (shown on the y axis) minus the budget. Movies that passed are shown in burgundy.</p>
+        <p>Indie and artistic films are often likely to pass the Blechdel test however, larger budget films have more trouble. There is a noticeably higher distribution of non-Blechdel passing films near the end of the chart indicating higher budgets. Of those movies, a larger percentage of them are breaking even in comparison to their budget.</p>
       </div>
     </div>
-    <div id='resources' class='padding'>
-      <h3>Further Reading!</h3>
+    <!-- <h2 id="tableTitle" class='padding'>The Dataset</h2>
+    <div id="dataTable">
+      <svg id='dataTable'></svg>
+      </div>
+    </div> -->
+    <div id='resources'>
+      <div>
+        <h3>Further Reading!</h3>
         <a href='https://lifehacker.com/the-bechdel-test-and-other-media-representation-tests-1819324045'>Media Representation Tests</a><br/>
         <a href='https://projects.fivethirtyeight.com/next-bechdel/'>Creating the Next Blechdel Test</a><br/>
         <h5> Visualization made by <a href='https://www.linkedin.com/in/zoe-kniskern'>Zoe Kniskern</a></h5>
-        
+      </div>       
+        <img  id="comicstrip" src="blechdel.jpg" alt="The Original Comic Strip">
     </div>
     
     <script src='./main.js'></script>
     <script src='./scatter.js'></script>
+    <!-- <script src='./table.js'></script> -->
   </body>
 </html>

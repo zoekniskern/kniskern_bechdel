@@ -16,6 +16,10 @@ Standard Comparison of Budget and Gross
  let scatterChart;
 
  let SdataURL = 'movies-cleaned.csv';
+
+ var scatterTip = d3.select('body').append('div')
+    .attr("class", "scatterTip")				
+    .style("opacity", 0);
  
  //Convert Rows
 function ConvertRows(row) {
@@ -25,6 +29,7 @@ function ConvertRows(row) {
       binary: row.binary,
       gross: parseInt(row.domgross),
       budget: parseInt(row.budget),
+      net: parseInt(row.domgross - row.budget)
     }
   }
 
@@ -41,27 +46,27 @@ function setWidth() {
   
   
 Sw = setWidth();
-Sh = 450;
+Sh = 470;
 
 function buildScatter(Sdataset) {
-    let budgMin = d3.min(dataset, (d) => d.gross);
-    let budgMax = d3.max(dataset, (d) => d.gross);
-    let grossMin = d3.min(dataset, (d) => d.budget);
-    let grossMax = d3.max(dataset, (d) => d.budget);
+    let netMin = d3.min(dataset, (d) => d.net);
+    let netMax = d3.max(dataset, (d) => d.net);
+    let budgMin = d3.min(dataset, (d) => d.budget);
+    let budgMax = d3.max(dataset, (d) => d.budget);
 
     console.log('budgeMin: ' + budgMin);
     console.log('budgMax: ' + budgMax);
-    console.log('grossMin: ' + grossMin);
-    console.log('grossMax: ' + grossMax);
+    console.log('grossMin: ' + netMin);
+    console.log('grossMax: ' + netMax);
 
     //BUDGET ON X
     let SxScale = d3.scaleLinear()
                   .domain([budgMin, 170000000])
-                  .rangeRound([20, w - 20]);
+                  .rangeRound([20, w - 30]);
 
     //GROSS ON Y
     let SyScale = d3.scaleLinear()
-                  .domain([grossMin, grossMax + 10000000])
+                  .domain([netMin, netMax + 10000000])
                   .rangeRound([h - 20, 0]);
 
     scatterChart = d3.select('#bvg')
@@ -73,7 +78,7 @@ function buildScatter(Sdataset) {
     .enter()
     .append('circle')
     .attr('cx', (d) => SxScale(d.budget))
-    .attr('cy', (d) => SyScale(d.gross))
+    .attr('cy', (d) => SyScale(d.net))
     .attr('fill', function(d) {
         if(d.binary == 'PASS'){
             return '#764f5a'
@@ -82,15 +87,31 @@ function buildScatter(Sdataset) {
         }
     })
     .attr('r', 4)
-    .attr('transform', `translate(35, -5)`);
+    .attr('transform', `translate(35, -5)`)
+    .on('mouseover', function(d, i) {
+      d3.select(this)
+        .transition()
+      scatterTip.transition()		
+        .duration(200)		
+        .style("opacity", .9);
+      scatterTip.html(
+        'Movie: ' + d.title + '<br/>' +
+        'Budget: $' + d3.format(",.2f")(d.budget) + '<br/>' +
+        'Net: $' + d3.format(",.2f")(d.net)
+      )	
+        .style("left", (d3.event.pageX) + 10 + "px")		
+        .style("top", (d3.event.pageY - 28) + "px");	
+    })
+    .on('mouseout', function(d, i) {
+      d3.select(this)
+        .transition()
+      console.log("moused out in original");
+      scatterTip.transition()		
+        .duration(500)		
+        .style("opacity", 0);
+    });
 
-    // let line = d3.select('#bvg').append('line')
-    // .attr("x1", 50)
-    // .attr("y1", 5)
-    // .attr("x2", 170000000)
-    // .attr("y2", 5)
-    // .attr('stroke', 'gray')
-    // .attr('stroke-width', 1);
+    // let line = d3.select('#bvg').append()
 
     // scatterChart.append(line);
 
@@ -131,6 +152,27 @@ function buildScatter(Sdataset) {
     SyAxisGroup = scatterChart.append('g')
     .attr('transform', `translate(50, 0)`)
     .call(SyAxis);
+
+    //axis labels
+    //https://bl.ocks.org/d3noob/23e42c8f67210ac6c678db2cd07a747e
+    // text label for the x axis
+    scatterChart.append("text")             
+    .attr("transform",
+          "translate(" + (Sw/2) + " ," + 
+                        (Sh - 5) + ")")
+    .style("text-anchor", "middle")
+    .text("Budget")
+    .attr("class", "axis");
+
+    // text label for the y axis
+    scatterChart.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", -2)
+    .attr("x",0 - (Sh / 2))
+    .attr("dy", "1em")
+    .style("text-anchor", "middle")
+    .text("Gross - Budget")
+    .attr("class", "axis");
 
 
 }

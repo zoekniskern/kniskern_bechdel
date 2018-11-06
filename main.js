@@ -21,11 +21,17 @@ let xAxis, yAxis;
 let xAxisGroup, yAxisGroup;
 let yearChart;
 
+let budget = false;
+
 let dataURL = 'movies-cleaned.csv';
 
 let parseDate = d3.timeParse("%Y");
 
 let key = (d) => d.key;
+
+var toolTip = d3.select('body').append('div')
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
 
 //Convert Rows
 function ConvertRows(row) {
@@ -78,9 +84,9 @@ function makeMoviesPerYear(dataset) {
     .attr('width', w)
     .attr('height', h);
 
-  var toolTip = d3.select('body').append('div')
-    .attr("class", "tooltip")				
-    .style("opacity", 0);
+  // var toolTip = d3.select('body').append('div')
+  //   .attr("class", "tooltip")				
+  //   .style("opacity", 0);
 
   //xScale of Years
   xScale = d3.scaleLinear()
@@ -115,8 +121,8 @@ console.log(d3.max(valuesByYear, (d) => d.key));
       .duration(200)		
       .style("opacity", .9);
     toolTip.html(
-      'Year: ' + d.key + '<br/>' +
-      d3.format(".0%")(d.value.passed / d.value.all) + ' pass Blechdel'
+      'Year: ' + d.key + '<br/>'
+      //d3.format(".0%")(d.value.passed / d.value.all) + ' pass Blechdel'
     )	
       .style("left", (d3.event.pageX) + 10 + "px")		
       .style("top", (d3.event.pageY - 28) + "px");	
@@ -184,8 +190,8 @@ function PassPerYear(dataset){
           .duration(200)		
           .style("opacity", .9);
         toolTip.html(
-          'Year: ' + d.key + '<br/>' +
-          'Pass Blechdel: ' + d3.format(".0%")(d.value.passed / d.value.all)
+          'Year: ' + d.key + '<br/>'
+          //'Pass Blechdel: ' + d3.format(".0%")(d.value.passed / d.value.all)
         )	
           .style("left", (d3.event.pageX) + 10 + "px")		
           .style("top", (d3.event.pageY - 28) + "px");	
@@ -345,6 +351,7 @@ function updateGraph() {
       MovPerYear(dataset);
       chartTitle.textContent = 'Looking at Movies by Year';
       chartDescrip.textContent = 'This set of data contains 1795 movies but they are not equally distributed by year. As we examine trends by year it is important to recognize flaws in our dataset that weigh it heavily towards movies in the 2000s.';
+      budget = false;
       console.log('ran movies per year update');
       break;
     case 1:
@@ -352,6 +359,7 @@ function updateGraph() {
       PassPerYear(dataset);
       chartTitle.textContent = 'How Many Movies Passed the Blechdel Test';
       chartDescrip.textContent = 'Out of the movies from each year included in our dataset, this is how many passed.';
+      budget = false;
       console.log('ran passes per year update');
       break;
     case 2:
@@ -359,6 +367,7 @@ function updateGraph() {
       BudgPerYear(dataset);
       chartTitle.textContent = 'The Average Budget of Films by Year';
       chartDescrip.textContent = 'It is important to note how much the budgets for movies have increased overthe years. In millions, this is the average budget for the movies of each year in this dataset.';
+      budget = true;
       console.log('ran average budget per year update');
       break;
     default:
