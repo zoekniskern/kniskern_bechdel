@@ -1,5 +1,5 @@
-# kniskern_blechdel
-Re-analyzing the Blchdel test
+# kniskern_bechdel
+Re-analyzing the Bechdel test
 
 Dataset from Sharon Brener
 https://data.world/sharon/bechdel-test
