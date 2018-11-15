@@ -1,5 +1,5 @@
 # kniskern_blechdel
-Re-analyzing the Blechdel test
+Re-analyzing the Blchdel test
 
 Dataset from Sharon Brener
 https://data.world/sharon/bechdel-test
@@ -15,7 +15,7 @@ I chose this dataset from Data.World because it included other related datasets 
 
 I chose to create two graphs ultimately:
 (1) A Bar Graph
-This chart displayed the amount of movies, the amount that passed the blechdel test, and the budget of those movies by year. By allowing the user to change which was displayed, and keeping the scales between movies and passing movies the same, it was obvious to the user the large disparity of movies that passed the test. A hoverable tooltip also showed the mathematical percentage of passing movies. By focusing on only lines and and length as marks and channels, the comparison is obvious to the user. A two-bar bar chart for each year may have been more successful.
+This chart displayed the amount of movies, the amount that passed the bechdel test, and the budget of those movies by year. By allowing the user to change which was displayed, and keeping the scales between movies and passing movies the same, it was obvious to the user the large disparity of movies that passed the test. A hoverable tooltip also showed the mathematical percentage of passing movies. By focusing on only lines and and length as marks and channels, the comparison is obvious to the user. A two-bar bar chart for each year may have been more successful.
 
 (2) A Scatter Plot
 This chart compared the budget of the film to the domestic earnings of the film. Using the color channel to distinguish between passing and failing movies allows the user to process the distribution of passing movies with a cursory glance. This is meant to invite the user to draw their own conclusion about the results of this comparison.
@@ -23,7 +23,7 @@ This chart compared the budget of the film to the domestic earnings of the film.
 Problem Spots (Written at 4:48 am):
 I wanted to change the tooltip when the graph was switched but ultimately should have referenced a different div instead of trying to resuse the already populated one.
 
-My intention with the scatter plot was to have a dividing line that would appear on mouseover (the beginning of this work is commented out in scatter.js) and follow the mouse as a horizontal rule showing which percentage of movies above that gross amount passed the blechdel test.
+My intention with the scatter plot was to have a dividing line that would appear on mouseover (the beginning of this work is commented out in scatter.js) and follow the mouse as a horizontal rule showing which percentage of movies above that gross amount passed the bechdel test.
 
 Tried to make the page responsive, some wins and some losses.
 
